@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1020">
+  <title>نقشه راه صفر تا صد طراحی و ساخت سایت</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020;
+      --bg2:#111936;
+      --panel:#121a2f;
+      --panel2:#18213b;
+      --text:#f7f9ff;
+      --muted:#aab4cc;
+      --purple:#7c5cff;
+      --teal:#2dd4bf;
+      --orange:#ff9f43;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 18px 55px rgba(0,0,0,.30);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Vazirmatn', Tahoma, Arial, sans-serif;
+      color:var(--text);
+      line-height:1.95;
+      background:
+        radial-gradient(circle at 10% 7%, rgba(124,92,255,.20), transparent 28%),
+        radial-gradient(circle at 90% 12%, rgba(45,212,191,.12), transparent 26%),
+        linear-gradient(180deg,var(--bg),#0a0e1b 100%);
+    }
+    a{color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{padding:76px 0 38px;text-align:center}
+    .badge{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:8px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      color:var(--teal);
+      font-size:14px;
+      margin-bottom:18px;
+    }
+    h1{
+      max-width:950px;
+      margin:0 auto 18px;
+      line-height:1.25;
+      font-size:clamp(36px,6vw,68px);
+      letter-spacing:-1px;
+    }
+    .lead{
+      max-width:830px;
+      margin:0 auto;
+      font-size:18px;
+      color:var(--muted);
+    }
+    .path{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:9px;
+      margin:28px auto 0;
+      max-width:980px;
+    }
+    .path span{
+      padding:9px 13px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.035);
+      font-size:14px;
+      color:#dce4f8;
+    }
+    .intro{
+      margin:34px auto 0;
+      max-width:920px;
+      text-align:right;
+      padding:22px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
+    }
+    .intro strong{color:var(--teal)}
+    main{padding:28px 0 78px}
+    details{
+      margin:16px 0;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg,rgba(255,255,255,.048),rgba(255,255,255,.018));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    details[open]{
+      border-color:rgba(124,92,255,.35);
+      background:linear-gradient(180deg,rgba(124,92,255,.08),rgba(255,255,255,.018));
+    }
+    summary{
+      list-style:none;
+      cursor:pointer;
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      gap:16px;
+      align-items:center;
+      padding:22px 24px;
+      user-select:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    .num{
+      width:50px;height:50px;
+      border-radius:16px;
+      display:grid;place-items:center;
+      font-weight:800;
+      background:linear-gradient(135deg,var(--purple),#4f46e5);
+      box-shadow:0 12px 30px rgba(124,92,255,.22);
+    }
+    .stitle{font-size:20px;font-weight:800}
+    .ssub{display:block;margin-top:2px;font-size:14px;color:var(--muted)}
+    .arrow{
+      width:32px;height:32px;
+      border-radius:10px;
+      display:grid;place-items:center;
+      border:1px solid var(--line);
+      color:var(--muted);
+      transition:.2s ease;
+      font-size:19px;
+    }
+    details[open] .arrow{transform:rotate(180deg);color:var(--teal)}
+    .content{
+      border-top:1px solid var(--line);
+      padding:23px 26px 28px 90px;
+      color:#e3e8f6;
+    }
+    .content h3{margin:20px 0 8px;color:var(--teal);font-size:17px}
+    .content p{margin:9px 0}
+    .content ul{margin:8px 0;padding-right:22px}
+    .content li{margin:5px 0}
+    .tip,.warning{
+      margin:16px 0;
+      padding:14px 16px;
+      border-radius:14px;
+      background:rgba(45,212,191,.08);
+      border-right:3px solid var(--teal);
+    }
+    .warning{
+      background:rgba(255,159,67,.08);
+      border-right-color:var(--orange);
+    }
+    .code{
+      direction:ltr;
+      text-align:left;
+      margin:14px 0;
+      padding:15px 16px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#070b16;
+      font-family:Consolas, monospace;
+      font-size:13px;
+      color:#dbe5ff;
+      overflow:auto;
+      white-space:pre-wrap;
+    }
+    .section-title{
+      margin:46px 0 18px;
+      font-size:30px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:var(--panel);
+      padding:20px;
+    }
+    .card .tag{
+      display:inline-block;
+      color:var(--teal);
+      font-size:13px;
+      margin-bottom:6px;
+    }
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0;color:var(--muted)}
+    .final{
+      margin-top:42px;
+      padding:28px;
+      border-radius:26px;
+      border:1px solid var(--line);
+      background:linear-gradient(135deg,rgba(124,92,255,.18),rgba(45,212,191,.08));
+    }
+    .final h2{margin-top:0}
+    .final-path{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:16px;
+    }
+    .final-path span{
+      padding:8px 11px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+    }
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      padding:0 0 44px;
+    }
+
+
+
+    .right-use-title{
+      color:var(--teal) !important;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .right-use-title::before{
+      content:"✓";
+      color:#2dd4bf;
+      font-weight:900;
+      font-size:19px;
+    }
+
+    .wrong-use-title{
+      color:#ff6b6b !important;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .wrong-use-title::before{
+      content:"✕";
+      color:#ff4d4f;
+      font-weight:900;
+      font-size:18px;
+    }
+
+    .ai-chapter{
+      margin-top:48px;
+      padding:28px;
+      border-radius:28px;
+      border:1px solid rgba(124,92,255,.34);
+      background:
+        radial-gradient(circle at 10% 0%,rgba(124,92,255,.18),transparent 35%),
+        radial-gradient(circle at 95% 10%,rgba(45,212,191,.10),transparent 30%),
+        rgba(255,255,255,.025);
+    }
+    .ai-kicker{
+      display:inline-block;
+      color:var(--teal);
+      font-size:13px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      padding:6px 11px;
+      border-radius:999px;
+      margin-bottom:8px;
+    }
+    .ai-chapter h2{font-size:31px;margin:5px 0 8px}
+    .ai-lead{color:var(--muted);margin:0 0 22px}
+    .golden-rule{
+      margin:20px 0 26px;
+      padding:18px;
+      border-radius:18px;
+      border:1px solid rgba(255,215,0,.55);
+      background:linear-gradient(135deg,rgba(255,215,0,.18),rgba(218,165,32,.10));
+      box-shadow:0 10px 30px rgba(255,193,7,.10);
+      color:#ffe9a6;
+    }
+    .golden-rule strong{
+      color:#ffd700;
+    }
+    .compare{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+      margin:20px 0 26px;
+    }
+    .compare-box{
+      padding:20px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:var(--panel);
+    }
+    .compare-box.bad{border-color:rgba(255,120,120,.20)}
+    .compare-box.good{border-color:rgba(45,212,191,.24)}
+    .compare-box h3{margin:0 0 12px}
+
+    .compare-box.bad h3{
+      color:#ff6b6b;
+    }
+    .compare-box.good h3{
+      color:#2dd4bf;
+    }
+
+    .flow-vertical{
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+      color:var(--muted);
+    }
+    .flow-vertical b{color:var(--text)}
+    .ai-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+    .ai-card{
+      padding:20px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
+    }
+    .ai-card h3{margin:0 0 10px;font-size:19px}
+    .ai-card p{color:var(--muted);margin:8px 0}
+    .ai-card strong{color:var(--teal)}
+    .checkpoint{
+      margin-top:24px;
+      padding:20px;
+      border-radius:20px;
+      background:rgba(45,212,191,.07);
+      border:1px solid rgba(45,212,191,.22);
+    }
+
+
+
+    .footer-caption{
+      width:min(1120px,92%);
+      margin:10px auto 18px;
+      padding:24px 20px;
+      text-align:center;
+      color:#9aa6c0;
+      font-size:clamp(15px,2vw,20px);
+    }
+
+    .credit-footer{
+      width:min(1120px,92%);
+      margin:0 auto 44px;
+      padding:34px 24px;
+      text-align:center;
+      color:#9aa6c0;
+      font-size:clamp(15px,2vw,20px);
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:#10172d;
+    }
+    .credit-footer strong{
+      color:#58d6ee;
+      font-weight:800;
+    }
+
+
+    .footer-panel{
+      width:min(1120px,92%);
+      margin:16px auto 44px;
+      padding:28px 28px 30px;
+      text-align:center;
+      border:1px solid rgba(154,166,192,.22);
+      border-radius:28px;
+      background:#10172d;
+      box-shadow:0 18px 45px rgba(0,0,0,.18);
+    }
+    .footer-panel .footer-caption{
+      width:auto;
+      margin:0;
+      padding:0;
+      color:#a8b2ca;
+      font-size:clamp(15px,2vw,19px);
+    }
+    .footer-divider{
+      width:72px;
+      height:1px;
+      margin:20px auto;
+      background:rgba(255,255,255,.12);
+    }
+    .footer-credit{
+      color:#a8b2ca;
+      font-size:clamp(15px,2vw,19px);
+      line-height:2;
+    }
+    .footer-credit a{
+      color:#58d6ee;
+      font-weight:800;
+      text-decoration:none;
+      transition:opacity .2s ease;
+    }
+    .footer-credit a:hover{
+      opacity:.78;
+      text-decoration:underline;
+      text-underline-offset:4px;
+    }
+    .footer-separator{
+      margin:0 7px;
+      color:#77839d;
+    }
+
+
+    /* Subtle glass UI layer */
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      z-index:-1;
+      width:420px;
+      height:420px;
+      border-radius:50%;
+      filter:blur(75px);
+      opacity:.20;
+      pointer-events:none;
+    }
+    body::before{
+      top:12%;
+      right:-160px;
+      background:#7c5cff;
+    }
+    body::after{
+      bottom:8%;
+      left:-170px;
+      background:#2dd4bf;
+    }
+
+    details{
+      background:linear-gradient(135deg,rgba(24,33,59,.60),rgba(18,26,47,.42));
+      -webkit-backdrop-filter:blur(16px) saturate(125%);
+      backdrop-filter:blur(16px) saturate(125%);
+      border-color:rgba(255,255,255,.115);
+      box-shadow:0 18px 50px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.035);
+    }
+    details[open]{
+      background:linear-gradient(135deg,rgba(40,38,82,.58),rgba(18,26,47,.43));
+      border-color:rgba(124,92,255,.38);
+    }
+
+    .ai-chapter{
+      background:
+        radial-gradient(circle at 12% 0%,rgba(124,92,255,.18),transparent 35%),
+        radial-gradient(circle at 95% 8%,rgba(45,212,191,.10),transparent 30%),
+        rgba(18,26,47,.48);
+      -webkit-backdrop-filter:blur(20px) saturate(130%);
+      backdrop-filter:blur(20px) saturate(130%);
+      box-shadow:0 22px 60px rgba(0,0,0,.23), inset 0 1px 0 rgba(255,255,255,.045);
+    }
+
+    .ai-card,
+    .card,
+    .compare-box{
+      background:rgba(18,26,47,.50);
+      -webkit-backdrop-filter:blur(14px) saturate(120%);
+      backdrop-filter:blur(14px) saturate(120%);
+      border-color:rgba(255,255,255,.11);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+    }
+
+    .golden-rule{
+      background:linear-gradient(135deg,rgba(255,215,0,.16),rgba(218,165,32,.075));
+      -webkit-backdrop-filter:blur(14px) saturate(125%);
+      backdrop-filter:blur(14px) saturate(125%);
+      border-color:rgba(255,215,0,.52);
+      box-shadow:0 14px 38px rgba(255,193,7,.08), inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .footer-panel{
+      background:linear-gradient(135deg,rgba(16,23,45,.66),rgba(18,26,47,.50));
+      -webkit-backdrop-filter:blur(20px) saturate(130%);
+      backdrop-filter:blur(20px) saturate(130%);
+      border-color:rgba(255,255,255,.12);
+      box-shadow:0 20px 55px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.04);
+    }
+
+    .badge,
+    .path span,
+    .ai-kicker{
+      background:rgba(255,255,255,.045);
+      -webkit-backdrop-filter:blur(10px);
+      backdrop-filter:blur(10px);
+      border-color:rgba(255,255,255,.12);
+    }
+
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))){
+      details,.ai-chapter,.ai-card,.card,.compare-box,.footer-panel{
+        background:#121a2f;
+      }
+    }
+
+
+    .zubik-cta{
+      width:min(1120px,92%);
+      margin:8px auto 16px;
+      padding:22px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      border:1px solid rgba(124,92,255,.28);
+      border-radius:22px;
+      background:linear-gradient(135deg,rgba(24,33,59,.58),rgba(18,26,47,.42));
+      -webkit-backdrop-filter:blur(18px) saturate(125%);
+      backdrop-filter:blur(18px) saturate(125%);
+      box-shadow:0 16px 42px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.04);
+    }
+    .zubik-cta-text h3{
+      margin:0 0 4px;
+      font-size:18px;
+      color:var(--text);
+    }
+    .zubik-cta-text p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .zubik-cta a{
+      flex:0 0 auto;
+      padding:10px 16px;
+      border-radius:12px;
+      text-decoration:none;
+      color:#fff;
+      font-weight:700;
+      background:linear-gradient(135deg,var(--purple),#5b4ae8);
+      border:1px solid rgba(255,255,255,.10);
+      transition:transform .2s ease, opacity .2s ease;
+    }
+    .zubik-cta a:hover{
+      transform:translateY(-2px);
+      opacity:.92;
+    }
+
+
+    .zubik-cta .zubik-logo-link{
+      padding:7px 12px;
+      width:150px;
+      height:58px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      background:#fff;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:0 10px 28px rgba(0,0,0,.16);
+    }
+    .zubik-cta .zubik-logo-link img{
+      display:block;
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+    }
+    .zubik-cta .zubik-logo-link:hover{
+      transform:translateY(-2px);
+      opacity:.96;
+    }
+
+    @media(max-width:720px){
+
+      .zubik-cta{
+        flex-direction:column;
+        align-items:stretch;
+        text-align:center;
+      }
+      .zubik-cta a{
+        text-align:center;
+      }
+
+      header{padding-top:52px}
+      .lead{font-size:16px}
+      summary{padding:18px 16px;gap:11px}
+      .num{width:44px;height:44px;border-radius:14px}
+      .stitle{font-size:17px}
+      .content{padding:20px 17px 23px}
+      .grid,.compare,.ai-grid{grid-template-columns:1fr}
+      .section-title{font-size:26px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="badge">نقشه راه آموزشی برای مبتدیان</div>
+      <h1>از طراحی در Figma تا ساخت یک سایت واقعی</h1>
+      <p class="lead">
+        هدف این مسیر این است که دیگر فقط «طرح سایت» نسازی و برای کدنویسی به شخص دیگری تحویل ندهی.
+        باید بتوانی ایده را از وایرفریم شروع کنی، UI و UX را بسازی، در Figma طراحی کنی،
+        با HTML و CSS پیاده‌سازی کنی، JavaScript اضافه کنی و در نهایت سایت را روی اینترنت منتشر کنی.
+      </p>
+
+      <div class="path">
+        <span>ایده</span><span>Wireframe</span><span>UX</span><span>UI</span><span>Figma</span>
+        <span>HTML</span><span>CSS</span><span>Responsive</span><span>JavaScript</span>
+        <span>Git / GitHub</span><span>Deploy</span><span>React + AI</span>
+      </div>
+</div>
+  </header>
+
+  <main class="container">
+
+    <details open>
+      <summary>
+        <span class="num">۱</span>
+        <span><span class="stitle">همین روند طراحی را ادامه بده</span><span class="ssub">نیازها ← وایرفریم ← UI</span></span>
+        <span class="arrow">⌄</span>
+      </summary>
+      <div class="content">
+        <p>برای هر پروژه، اول نیازهای سایت را مشخص کن.</p>
+        <h3>مثلاً برای یک سایت شرکتی:</h3>
+        <ul>
+          <li>صفحه اصلی</li><li>درباره ما</li><li>خدمات</li><li>پروژه‌ها</li><li>تماس با ما</li>
+        </ul>
+        <h3>بعد Wireframe بکش</h3>
+        <p>فعلاً رنگ و زیبایی مهم نیست. فقط مشخص کن Header کجاست، منو کجاست، Hero چه شکلی است، بخش خدمات کجاست، عکس‌ها کجا هستند و Footer چگونه است.</p>
+        <h3>بعد UI را در Figma طراحی کن</h3>
+        <p>Wireframe را تبدیل به طراحی واقعی کن و رنگ، فونت، عکس، Button، Card و بقیه اجزا را مشخص کن.</p>
+        <div class="tip"><strong>قانون جدید:</strong> فقط نسخه Desktop طراحی نکن. حداقل نسخه Desktop و Mobile را طراحی کن.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="num">۲</span>
+        <span><span class="stitle">Figma را حرفه‌ای‌تر یاد بگیر</span><span class="ssub">فقط طراحی نکن؛ ساختار درست بساز</span></span>
+        <span class="arrow">⌄</span>
+      </summary>
+      <div class="content">
+        <p>فقط بلد بودن ابزارهای ظاهری Figma کافی نیست. باید ساختار طراحی حرفه‌ای را هم یاد بگیری.</p>
+        <ul>
+          <li>Frame</li><li>Auto Layout</li><li>Components</li><li>Variants</li>
+          <li>Styles</li><li>Variables</li><li>Constraints</li><li>Responsive Design</li><li>Dev Mode</li>
+        </ul>
+        <p>مثلاً Button را ده بار جداگانه طراحی نکن. یک Component بساز و حالت‌های مختلف آن را مشخص کن:</p>
+        <div class="code">Default
+Hover
+Disabled</div>
+        <p>این طرز فکر بعداً در برنامه‌نویسی هم خیلی به دردت می‌خورد.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="num">۳</span>
+        <span><span class="stitle">دیگر برای کدنویسی از Figma عکس نگیر</span><span class="ssub">خود فایل Figma مرجع اصلی است</span></span>
+        <span class="arrow">⌄</span>
+      </summary>
+      <div class="content">
+        <p>PNG یا PDF فقط برای نمایش طرح خوب است. برای ساخت سایت باید خود فایل Figma مرجع باشد.</p>
+        <p>مثلاً در Figma می‌بینی:</p>
+        <ul>
+          <li>عرض: 1200px</li><li>فاصله: 32px</li><li>رنگ: #1264FF</li><li>Border Radius: 12px</li>
+        </ul>
+        <p>بعد همین مشخصات را در CSS پیاده می‌کنی.</p>
+        <div class="code">Figma → VS Code
+
+نه
+
+Figma → عکس → VS Code</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="num">۴</span>
+        <span><span class="stitle">HTML را کاملاً مسلط شو</span><span class="ssub">اسکلت و ساختار صفحه</span></span>
+        <span class="arrow">⌄</span>
+      </summary>
+      <div class="content">
+        <p>قبل از رفتن سراغ چیزهای پیچیده، HTML را خوب یاد بگیر.</p>
+        <ul>
+          <li>header</li><li>nav</li><li>main</li><li>section</li><li>article</li><li>footer</li>
+          <li>h1 تا h6</li><li>p</li><li>a</li><li>button</li><li>img</li>
+          <li>form</li><li>input</li><li>label</li>
+        </ul>
+        <div class="warning">فقط تگ‌ها را حفظ نکن. باید بفهمی ساختار صحیح یک صفحه وب چیست.</div>
+        <p>مثلاً وقتی در Figma این بخش‌ها را می‌بینی:</p>
+        <div class="code">Header
+Hero
+Services
+About
+Projects
+Contact
+Footer</div>
+        <p>ذهن تو باید سریع آن را به ساختار HTML تبدیل کند:</p>
+        <div class="code">&lt;header&gt;&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;section class="hero"&gt;&lt;/section&gt;
+  &lt;section class="services"&gt;&lt;/section&gt;
+  &lt;section class="about"&gt;&lt;/section&gt;
+  &lt;section class="projects"&gt;&lt;/section&gt;
+  &lt;section class="contact"&gt;&lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;&lt;/footer&gt;</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="num">۵</span>
+        <span><span class="stitle">CSS را خیلی جدی یاد بگیر</span><span class="ssub">طراحی Figma اینجا تبدیل به سایت می‌شود</span></span>
+        <span class="arrow">⌄</span>
+      </summary>
+      <div class="content">
+        <p>CSS برای تو فوق‌العاده مهم است، چون طراحی که در Figma ساخته‌ای باید با CSS تبدیل به سایت شود.</p>
+        <ul>
+          <li>Box Model</li><li>Width / Height</li><li>Margin</li><li>Padding</li><li>Border</li>
+          <li>Border Radius</li><li>Typography</li><li>Colors</li><li>Background</li><li>Position</li>
+          <li>Flexbox</li><li>CSS Grid</li><li>Gap</li><li>max-width</li><li>min-height</li>
+          <li>overflow</li><li>pseudo classes</li><li>:hover</li><li>transitions</li><li>Media Queries</li>
+        </ul>
+        <div class="tip"><strong>دو مورد از همه مهم‌ترند:</strong> Flexbox و Grid. باید به جایی برسی که یک Layout را در Figma ببینی و سریع تشخیص بدهی با Flex بهتر ساخته می‌شود یا Grid.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="num">۶</span>
+        <span><span class="stitle">Responsive Design یاد بگیر</span><span class="ssub">سایت باید روی موبایل هم درست باشد</span></span>
+        <span class="arrow">⌄</span>
+      </summary>
+      <div class="content">
+        <p>سایتی که فقط روی لپ‌تاپ درست نمایش داده شود، سایت کامل نیست.</p>
+        <p>باید سایت روی Desktop، Tablet و Mobile درست کار کند.</p>
+        <p>مثلاً اگر Desktop این باشد:</p>
+        <div class="code">TEXT            IMAGE</div>
+        <p>ممکن است در Mobile تبدیل شود به:</p>
+        <div class="code">IMAGE
+
+TEXT
+
+BUTTON</div>
+        <p>برای این کار باید این موارد را یاد بگیری:</p>
+        <ul>
+          <li>Media Query</li><li>Flex</li><li>Grid</li><li>درصد</li><li>max-width</li>
+          <li>min/max/clamp</li><li>Responsive Typography</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="num">۷</span>
+        <span><span class="stitle">حالا JavaScript را شروع کن</span><span class="ssub">اول تعامل‌های ساده و واقعی</span></span>
+        <span class="arrow">⌄</span>
+      </summary>
+      <div class="content">
+        <p>از JavaScript نترس. قرار نیست از روز اول برنامه پیچیده بنویسی.</p>
+        <p>اول فقط چیزهایی را یاد بگیر که سایتت را زنده می‌کنند. مثلاً:</p>
+        <div class="code">کلیک روی دکمه
+↓
+باز شدن منو</div>
+        <p>بعد این مفاهیم را یاد بگیر:</p>
+        <ul>
+          <li>Variables</li><li>if / else</li><li>Functions</li><li>Arrays</li><li>Objects</li>
+          <li>Loops</li><li>DOM</li><li>querySelector</li><li>addEventListener</li><li>classList</li><li>Events</li>
+        </ul>
+        <p>بعد با JavaScript این چیزها را بساز:</p>
+        <ul>
+          <li>منوی موبایل</li><li>Accordion</li><li>Tabs</li><li>Modal</li><li>Slider</li>
+          <li>FAQ</li><li>فرم</li><li>Dark Mode</li><li>فیلتر محصولات</li>
+        </ul>
+        <p>وقتی خودت این‌ها را ساختی، JavaScript خیلی قابل فهم‌تر می‌شود.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="num">۸</span>
+        <span><span class="stitle">AI را فعلاً دستیار خودت کن</span><span class="ssub">کمک بگیر، اما یادگیری را دور نزن</span></span>
+        <span class="arrow">⌄</span>
+      </summary>
+      <div class="content">
+        <p>در این مرحله می‌توانی از AI کمک بگیری، اما هنوز نباید کل طراحی یا کل سایت را به آن بسپاری.</p>
+        <div class="warning"><strong>قانون مهم:</strong> کدی که نمی‌فهمی وارد پروژه نکن و طرحی را که نمی‌توانی ارزیابی کنی فقط به خاطر اینکه AI ساخته، قبول نکن.</div>
+        <h3 class="right-use-title">استفاده درست در این مرحله</h3>
+        <ul>
+          <li>توضیح یک مفهوم سخت در HTML، CSS یا JavaScript</li>
+          <li>پیدا کردن علت یک خطا</li>
+          <li>گرفتن بازخورد درباره طراحی خودت</li>
+          <li>توضیح خط‌به‌خط یک قطعه کد</li>
+          <li>پیشنهاد چند راه برای Responsive کردن یک بخش</li>
+        </ul>
+        <h3 class="wrong-use-title">استفاده اشتباه در این مرحله</h3>
+        <ul>
+          <li>«کل UI را برایم طراحی کن» و بدون بررسی قبول کردن خروجی</li>
+          <li>«کل سایت را بساز» و Copy/Paste کردن کد</li>
+          <li>رد شدن از JavaScript فقط چون AI می‌تواند کد بنویسد</li>
+        </ul>
+        <p>AI در این مرحله باید نقش <strong>معلم، منتقد و دستیار</strong> را داشته باشد.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="num">۹</span>
+        <span><span class="stitle">اول یک سایت را خودت کامل بساز</span><span class="ssub">نقطه ورود به استفاده جدی از AI</span></span>
+        <span class="arrow">⌄</span>
+      </summary>
+      <div class="content">
+        <p>قبل از اینکه سراغ تبدیل طراحی به کد با AI بروی، حداقل یک پروژه را خودت از ابتدا تا انتها انجام بده:</p>
+        <div class="code">Wireframe → UI/UX → Figma → HTML → CSS → Responsive → JavaScript ساده</div>
+        <p>لازم نیست برنامه‌نویس حرفه‌ای شده باشی؛ اما باید بتوانی ساختار صفحه، CSS و رفتارهای ساده JavaScript را بفهمی و اشکال‌های معمول را پیدا کنی.</p>
+        <div class="tip"><strong>نقطه کنترل:</strong> اگر می‌توانی یک Landing Page یا سایت شرکتی Responsive را خودت بسازی و توضیح بدهی هر قسمت چگونه کار می‌کند، آماده‌ای AI را جدی‌تر وارد Workflow کنی.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="num">۱۰</span>
+        <span><span class="stitle">Git و GitHub یاد بگیر</span><span class="ssub">پروژه‌هایت را حرفه‌ای مدیریت کن</span></span>
+        <span class="arrow">⌄</span>
+      </summary>
+      <div class="content">
+        <p>بعد از اینکه چند سایت ساده ساختی، این‌ها را یاد بگیر:</p>
+        <ul>
+          <li>Git چیست؟</li><li>Repository چیست؟</li><li>Commit چیست؟</li>
+          <li>Branch چیست؟</li><li>Push چیست؟</li><li>Pull چیست؟</li><li>GitHub چیست؟</li>
+        </ul>
+        <p>از این مرحله به بعد پروژه‌هایت را روی GitHub نگهداری کن.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="num">۱۱</span>
+        <span><span class="stitle">سایتت را واقعاً منتشر کن</span><span class="ssub">پروژه وقتی تمام است که روی اینترنت باشد</span></span>
+        <span class="arrow">⌄</span>
+      </summary>
+      <div class="content">
+        <p>فقط روی کامپیوتر سایت نساز. باید یاد بگیری سایت را روی اینترنت منتشر کنی.</p>
+        <ul>
+          <li>Domain چیست؟</li><li>Hosting چیست؟</li><li>DNS چیست؟</li><li>SSL چیست؟</li><li>Deployment چیست؟</li>
+        </ul>
+        <p>اولین پروژه‌های HTML/CSS/JS خودت را می‌توانی با GitHub Pages منتشر کنی.</p>
+        <div class="tip">وقتی لینک واقعی سایت خودت را باز کردی و روی موبایل دیدی، پروژه واقعاً تمام شده است.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="num">۱۲</span>
+        <span><span class="stitle">بعداً برو سراغ React</span><span class="ssub">اول پایه، بعد فریم‌ورک</span></span>
+        <span class="arrow">⌄</span>
+      </summary>
+      <div class="content">
+        <p>فعلاً React را شروع نکن.</p>
+        <p>اول این مسیر را خوب یاد بگیر:</p>
+        <div class="code">HTML → CSS → Responsive → JavaScript</div>
+        <p>وقتی توانستی چند سایت را بدون React بسازی و JavaScript را فهمیدی، آن موقع برو سراغ React.</p>
+        <p>بعد از React هم می‌توانی سراغ Next.js بروی.</p>
+      </div>
+    </details>
+
+
+    <section class="ai-chapter">
+      <span class="ai-kicker">فصل ویژه — بعد از یادگیری مبانی</span>
+      <h2>حالا وقت استفاده جدی از AI است</h2>
+      <p class="ai-lead">
+        وقتی حداقل یک سایت را خودت ساخته‌ای، AI دیگر راه فرار از یادگیری نیست؛ تبدیل می‌شود به ابزاری برای سریع‌تر طراحی کردن، آزمایش کردن و کدنویسی کردن.
+      </p>
+
+      <div class="golden-rule">
+        <strong>قانون طلایی:</strong>
+        اگر نمی‌توانی خروجی AI را بررسی، توضیح و اصلاح کنی، هنوز نباید آن کار را کامل به AI بسپاری.
+      </div>
+
+      <div class="compare">
+        <div class="compare-box bad">
+          <h3>مسیر اشتباه ✕</h3>
+          <div class="flow-vertical">
+            <b>ایده</b><span>↓</span><b>AI</b><span>↓</span>
+            <span>طرح و کد آماده</span><span>↓</span>
+            <span>Copy / Paste</span><span>↓</span>
+            <span>سایتی که نمی‌دانی چطور ساخته شده</span>
+          </div>
+        </div>
+        <div class="compare-box good">
+          <h3>مسیر درست ✓</h3>
+          <div class="flow-vertical">
+            <b>ایده و Wireframe</b><span>↓</span><b>UI/UX و Figma</b><span>↓</span>
+            <b>HTML / CSS / JS</b><span>↓</span>
+            <span>درک اصول</span><span>↓</span><b>AI</b><span>↓</span>
+            <span>سرعت بیشتر + کنترل دست خودت</span>
+          </div>
+        </div>
+      </div>
+
+      <h3>قابلیت‌های AI و ابزارهای جدید Figma که باید بشناسی</h3>
+      <div class="ai-grid">
+        <article class="ai-card">
+          <h3>Figma AI</h3>
+          <p><strong>چه کمکی می‌کند؟</strong> برای سرعت دادن به بعضی کارهای طراحی، ایده‌پردازی و ویرایش در محیط Figma.</p>
+          <p><strong>چه زمانی؟</strong> وقتی خودت اصول UI، Auto Layout، Component و Responsive Design را می‌فهمی.</p>
+          <p><strong>حواست باشد:</strong> پیشنهاد AI جای تصمیم طراحی و قضاوت UX را نمی‌گیرد.</p>
+        </article>
+
+        <article class="ai-card">
+          <h3>Figma Make</h3>
+          <p><strong>چه کمکی می‌کند؟</strong> می‌توانی با Prompt و طراحی موجود، ایده را سریع‌تر به یک تجربه یا Prototype قابل اجرا نزدیک کنی.</p>
+          <p><strong>چه زمانی؟</strong> برای آزمایش ایده، Prototype و سریع دیدن نتیجه.</p>
+          <p><strong>حواست باشد:</strong> خروجی آماده به معنی خروجی نهایی و Production-ready نیست.</p>
+        </article>
+
+        <article class="ai-card">
+          <h3>Dev Mode</h3>
+          <p><strong>چه کمکی می‌کند؟</strong> فاصله بین طراحی و توسعه را کمتر می‌کند و مشخصات طراحی را برای پیاده‌سازی قابل استفاده‌تر می‌کند.</p>
+          <p><strong>چه زمانی؟</strong> وقتی می‌خواهی طراحی خودت را دقیق در HTML/CSS یا یک پروژه Front-end پیاده‌سازی کنی.</p>
+          <p><strong>هدف:</strong> کمتر حدس بزن، بیشتر از ساختار واقعی طراحی استفاده کن.</p>
+        </article>
+
+        <article class="ai-card">
+          <h3>Figma MCP + Coding Agent</h3>
+          <p><strong>چه کمکی می‌کند؟</strong> ابزارهای کدنویسی AI می‌توانند اطلاعات ساختاری طراحی Figma را دریافت کنند و در پیاده‌سازی Front-end کمک کنند.</p>
+          <p><strong>چه زمانی؟</strong> بعد از اینکه می‌توانی خروجی HTML/CSS/JS را بخوانی و اصلاح کنی.</p>
+          <p><strong>Workflow:</strong> Figma → MCP → Coding Agent → Code → بررسی و اصلاح توسط تو.</p>
+        </article>
+
+        <article class="ai-card">
+          <h3>AI برای بررسی طراحی</h3>
+          <p><strong>چه کمکی می‌کند؟</strong> می‌توانی از AI بخواهی درباره سلسله‌مراتب بصری، وضوح محتوا، Responsive بودن یا مشکلات احتمالی طراحی بازخورد بدهد.</p>
+          <p><strong>بهترین استفاده:</strong> اول خودت طراحی کن، بعد AI را مثل یک منتقد دوم وارد کن.</p>
+        </article>
+
+        <article class="ai-card">
+          <h3>AI برای یادگیری کد</h3>
+          <p><strong>چه کمکی می‌کند؟</strong> خطا را توضیح می‌دهد، کد را خط‌به‌خط باز می‌کند و برای یک مسئله چند راه‌حل پیشنهاد می‌دهد.</p>
+          <p><strong>بهترین استفاده:</strong> به جای گرفتن جواب آماده، از AI بخواه دلیل و منطق راه‌حل را هم آموزش دهد.</p>
+        </article>
+      </div>
+
+      <div class="checkpoint">
+        <strong>هدف نهایی:</strong>
+        تو باید طراح و توسعه‌دهنده‌ای باشی که بدون AI هم اصول کار را می‌فهمد، اما با AI می‌تواند سریع‌تر ایده بسازد، Prototype بزند، کد تولید کند، اشکال پیدا کند و پروژه را جلو ببرد.
+      </div>
+    </section>
+
+    <h2 class="section-title">پروژه‌هایی که باید به ترتیب بسازی</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">پروژه ۱</span>
+        <h3>Landing Page ساده</h3>
+        <p>فقط HTML + CSS</p>
+      </div>
+      <div class="card">
+        <span class="tag">پروژه ۲</span>
+        <h3>سایت شرکتی چندصفحه‌ای</h3>
+        <p>HTML + CSS + Responsive</p>
+      </div>
+      <div class="card">
+        <span class="tag">پروژه ۳</span>
+        <h3>سایت تعاملی</h3>
+        <p>HTML + CSS + JavaScript؛ شامل Menu، Slider، FAQ، Modal و Form</p>
+      </div>
+      <div class="card">
+        <span class="tag">پروژه ۴</span>
+        <h3>یک پروژه کامل از صفر</h3>
+        <p>Wireframe → Figma → Desktop → Mobile → HTML → CSS → JS → انتشار</p>
+      </div>
+      <div class="card">
+        <span class="tag">پروژه ۵</span>
+        <h3>همان مسیر با کمک AI</h3>
+        <p>همان فرایند را با AI انجام بده و ببین چقدر سریع‌تر می‌شوی.</p>
+      </div>
+      <div class="card">
+        <span class="tag">پروژه ۶</span>
+        <h3>React</h3>
+        <p>فقط بعد از تسلط قابل قبول به JavaScript</p>
+      </div>
+    </div>
+
+    <section class="final">
+      <h2>قانون اصلی مسیرت</h2>
+      <p>قرار نیست فقط «طراح Figma» باشی. قرار نیست فقط «کدنویس» هم باشی.</p>
+      <p><strong>هدفت این باشد که بتوانی یک ایده را بگیری و آن را به یک سایت واقعی روی اینترنت تبدیل کنی.</strong></p>
+      <div class="final-path">
+        <span>Wireframe</span><span>UX</span><span>UI</span><span>Figma</span>
+        <span>HTML</span><span>CSS</span><span>Responsive</span><span>JavaScript</span>
+        <span>Git / GitHub</span><span>Deploy</span><span>React + AI Tools</span>
+      </div>
+      <p style="margin-top:18px;color:var(--muted)">
+        اگر این مسیر را درست طی کنی، دیگر لازم نیست طرح Figma را به یک نفر دیگر بدهی تا برایت تبدیل به سایت کند.
+        خودت هم طراح سایت هستی و هم می‌توانی Front-end آن را بسازی.
+      </p>
+    </section>
+
+  </main>
+
+  <aside class="zubik-cta">
+    <div class="zubik-cta-text">
+      <h3>مکعب روبیک بلدی؟</h3>
+      <p>زوبیک رو امتحان کن و ببین چقدر سریع حلش می‌کنی.</p>
+    </div>
+    <a class="zubik-logo-link" href="https://hamedshabanzadeh.github.io/zubik/" target="_blank" rel="noopener noreferrer" aria-label="تست زوبیک"><img src="assets/zubik-logo.png" alt="زوبیک"></a>
+  </aside>
+
+  <footer class="footer-panel">
+<div class="footer-credit">
+      تهیه شده توسط
+      <a href="https://linktr.ee/hamed.shabanzadeh" target="_blank" rel="noopener noreferrer">حامد شعبان‌زاده</a>
+      با ابزار ChatGPT
+      <span class="footer-separator">|</span>
+      <span>©2026</span>
+    </div>
+  </footer>
+</body>
+</html>
