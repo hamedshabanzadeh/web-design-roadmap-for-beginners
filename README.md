@@ -5,7 +5,6 @@
 
 **[مشاهده نقشه راه تعاملی](https://hamedshabanzadeh.github.io/web-design-roadmap-for-beginners/)**
 
----
 
 این پروژه تلاش می‌کند مسیر یادگیری را به زبان ساده و مرحله‌به‌مرحله نشان دهد؛ از ایده و وایرفریم تا Figma، HTML، CSS، JavaScript، GitHub، انتشار سایت و در نهایت استفاده اصولی از ابزارهای هوش مصنوعی.
 
